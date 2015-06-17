@@ -28,43 +28,25 @@
         </a>
 
         <img src="menu.png" class='pull-right' style='margin-top: 4px;'>
-        <button class='btn btn-link icon-search pull-right' style='color:#FFF; margin-top: 7px;' name='button' type='submit'></button>
-
       </nav>
     </header>
     <div id='wrapper'>
-      <div id='main-nav-bg'></div>
-      <nav id='main-nav'>
-        <div class='navigation'>
-          <ul class='nav nav-stacked'>
-            <li class=''>
-              <a href='index-2.html'>
-                <i class='icon-home'></i>
-                <span>Home</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
       <section id='content' style='width: 100%; right: 0px; position: absolute;'>
         <div class='container' style="padding:0px;">
-          <div class='row' id='content-wrapper'>
-            <div class='col-xs-12' style="">
 
-        <div id="results" style="margin-top:33px;">
+          <div id="results" style="margin-top:33px;">
+          </div>
+
         </div>
-      </div>
-      </div>
-          <footer id='footer'>
-            <div class='footer-wrapper'>
-              <div class='row'>
-                <div class='col-sm-6 text'>
+        <footer id='footer'>
+          <div class='footer-wrapper'>
+            <div class='row'>
+              <div class='col-sm-6 text'>
 
-                </div>
               </div>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       </section>
     </div>
 
@@ -75,13 +57,16 @@
   }
   #results{
     background-color: #EDEDED;
+    position: fixed;
+    top: -10px;
+    overflow-y: scroll; 
     padding: 10px;
   }
   .section{
     border-radius: 3px;
     box-shadow: 0px 0px 1px 2px #DDDDEC;
     background-color: #FDFDFC;
-    padding: 5px;
+    padding: 5px;padding-bottom: 10px;
     margin-top: 3px;
   }
   .date{ font-family: 'Roboto', sans-serif; }
@@ -111,6 +96,8 @@
   var xml_content = "";
 
     $(document).ready(function(){
+      var h = $(window).height() - 50;
+      $("#results").css("height", h+'px');
       loadStories();
   });
 
