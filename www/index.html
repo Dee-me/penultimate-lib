@@ -60,6 +60,7 @@
     position: fixed;
     top: -10px;
     overflow-y: scroll; 
+    overflow-x: hidden; 
     padding: 10px;
   }
   .section{
@@ -367,7 +368,7 @@
                         }
                         this_story += "<div class='story'><div class='story_content'>" + main_story + "</div></div>";
                         this_story += "</div>";
-                        if (main_story.length > 5) {
+                        if (main_story.length < 5) {
                           console.log('Cant find story')
                         }
                        
