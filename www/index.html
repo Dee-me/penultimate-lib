@@ -343,18 +343,28 @@
                           }
                         }
 
-                        var all = story_date + story_title + img_array + video_link + main_story
+                        //var all = story_date + story_title + img_array + video_link + main_story
                         
                         var this_story = "<div class='section' onclick=''>";
                         this_story += "<div class='title'>" + story_title + "</div>";
+
+                        var num = 0;
                         for (var i = 0; i < img_array.length; i++) {
-                          if (img_array[i] != undefined) {
+                          if (img_array[i] != undefined && num == 0) {
                             this_story += "<div class='story_image'>" + wrapImages(img_array[0]) + "</div>";
-                            break;
+                            num--;
                           }
                         }
-                        this_story += "<div class='story'><div class='story_content'" + main_story + "</div></div>";
-                        this_story += "</div>";
+                        if (main_story.length > 5) {
+                          this_story += "<div class='story'><div class='story_content'" + main_story + "</div></div>";
+                          this_story += "</div>";
+                          console.log("DEE:")
+                        }else{
+                          console.log("dee:");
+                          this_story += "<div class='story'><div class='story_content'</div></div>";
+                          this_story += "</div></div>";
+                        }
+                       
 
                         setXmlContent(this_story);
                         querySelector.innerHTML = xml_content;
