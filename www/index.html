@@ -34,7 +34,7 @@
       <section id='content' style='width: 100%; right: 0px; position: absolute;'>
         <div class='container' style="padding:0px;">
 
-          <div id="results" style="margin-top:33px;">
+          <div id="results" style="margin-top:33px;width:98%;margin-right:10px;">
           </div>
 
         </div>
@@ -97,9 +97,18 @@
 
     $(document).ready(function(){
       var h = $(window).height() - 50;
+      var w = $(window).width() - 20;
       $("#results").css("height", h+'px');
+      $("#results").css("width", w+'px');
       loadStories();
   });
+
+    $(window).resize(function() {
+      var h = $(window).height() - 50;
+      var w = $(window).width() - 20;
+      $("#results").css("height", h+'px');
+      $("#results").css("width", w+'px');
+    });
 
   function setXmlContent (content) {
     xml_content += content+"<br />";
