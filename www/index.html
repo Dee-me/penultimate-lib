@@ -79,7 +79,7 @@
       float: left;
   }
   .story_content{
-    height: 98px;
+    max-height: 98px;
     padding-left: 10px;
     padding-bottom: 2px;
     overflow: hidden;
@@ -171,6 +171,7 @@
                             
                           } 
                         }
+
                         
                         // Content
                         if (contents.content != undefined)
@@ -355,14 +356,10 @@
                             num--;
                           }
                         }
+                        this_story += "<div class='story'><div class='story_content'>" + main_story + "</div></div>";
+                        this_story += "</div>";
                         if (main_story.length > 5) {
-                          this_story += "<div class='story'><div class='story_content'" + main_story + "</div></div>";
-                          this_story += "</div>";
-                          console.log("DEE:")
-                        }else{
-                          console.log("dee:");
-                          this_story += "<div class='story'><div class='story_content'</div></div>";
-                          this_story += "</div></div>";
+                          console.log('Cant find story')
                         }
                        
 
